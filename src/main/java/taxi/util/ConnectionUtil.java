@@ -9,8 +9,8 @@ public class ConnectionUtil {
     private static final String URL =
             "jdbc:mysql://localhost:3306/taxi?useUnicode=true&useJDBCCompliantTimezoneShift"
                     + "=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "123456789";
+    private static final String USER_NAME = "USER_NAME";
+    private static final String PASSWORD = "PASSWORD";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     static {
@@ -23,7 +23,7 @@ public class ConnectionUtil {
 
     public static Connection getConnection() {
         Properties dbProperties = new Properties();
-        dbProperties.setProperty("user", USERNAME);
+        dbProperties.setProperty("user", USER_NAME);
         dbProperties.setProperty("password", PASSWORD);
         try {
             return DriverManager.getConnection(URL, dbProperties);
